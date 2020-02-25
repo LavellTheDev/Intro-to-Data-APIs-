@@ -10,15 +10,14 @@
   </body>
   <script>
 
-  const poems = document.getElementById('#poem');
+  const poem = document.getElementById('poem');
 
-  fetch('poem2.txt')
-  .then(response =>{
-    return response.text();
-  })
-  .then(response =>{
+  fetch ('poem2.txt')
+  .then(response => {
     console.log(response);
+    return response.text()
   })
+
 
 
 
