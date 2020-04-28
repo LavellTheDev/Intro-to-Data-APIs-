@@ -7,28 +7,28 @@
     <title>Coding Train: Data/APIs 1</title>
   </head>
   <body>
-    <h1>Catching thos Bows</h1>
+    <h1>Catching those Bows</h1>
     <img src="" id="rainbow" width="480" alt="">
     <script>
-    console.log("About to fetch some bows");
-
-    catchRainbow()
-      .then(response => {
-        console.log('yay');
-      })
-
-      .catch(error => {
-        console.log("error!");
+      console.log("About to catch dem bows");
+      fetch('rainbow.jpg').then(response => {
+        console.log(response);
+        return response.blob();
+      }).then(blob => {
+        console.log(blob);
+        document.getElementById('rainbow').src = URL.createObjectURL(blob);
+      }).catch(error =>{
+        console.log('error!')
         console.error(error);
       })
-    async function catchRainbow(){
-      const response = await fetch('rainbow.jpg');
-      const blob = await response.blob()
-      document.getElementById('rainbow').src = URL.createObjectURL(blob);
-
-    }
-
-
     </script>
   </body>
 </html>
+
+<!--
+Steps for Fetch
+1) Call fetch (Single Argument)<which is the path("rainbow.jpg")
+2) Response... how do we store data [text, blob(img), json]
+3) Complete data stream
+4) Make an <img> element
+   -->
