@@ -9,17 +9,8 @@
     <p id="poem"></p>
   </body>
   <script>
+    fetch("poem2.text").then(response => {
 
-  const poem = document.getElementById('poem');
-
-  fetch ('poem2.txt')
-  .then(response => {
-    console.log(response);
-    return response.text()
-  })
-
-
-
-
+    });
   </script>
 </html>
