@@ -9,20 +9,6 @@
     <p id="poem"></p>
   </body>
   <script>
-    console.log('about to fetch a poem');
-    catchPoem()
-    .then(poem => {
-      document.getElementById('poem').innerText = poem;
-      console.log('yay');
-    })
-    .catch(error => {
-      console.log('error!');
-      console.log(error);
-    });
 
-    async function catchPoem(){
-      const response = await fetch('poem2.txt');
-      return await response.text();
-    }
   </script>
 </html>
